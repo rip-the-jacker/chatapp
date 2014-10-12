@@ -1,0 +1,11 @@
+Django==1.6
+South==1.0
+argparse==1.2.1
+django-omnibus==0.1.0
+ipdb==0.8
+ipython==2.3.0
+psycopg2==2.5.4
+pyzmq==14.1.1
+sockjs-tornado==1.0.1
+tornado==3.1.1
+wsgiref==0.1.2
