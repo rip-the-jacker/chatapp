@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'chatapp',
     'south',
     'omnibus',
+    'tastypie',
 )
 
 MIDDLEWARE_CLASSES = (
