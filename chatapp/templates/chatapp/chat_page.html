@@ -12,6 +12,7 @@
 <script type="text/javascript">
   $('#chat_enter').click(function(event) {
     var message = $('#input_area').val();
+    $('#input_area').val('');
     $.ajax({
       url: 'new_message',
       type: 'POST',
