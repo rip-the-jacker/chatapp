@@ -1,8 +1,7 @@
-<form action="/login" method="POST">
-    {% csrf_token %}
-  <label for="username">Username</label>
-  <input type="text" name="username">
-  <label for="password">Password</label>
-  <input type="password" name="password">
-  <input type="submit">
-</form>
+<label for="username">Username</label>
+<input id="username" type="text" name="username">
+<label for="password">Password</label>
+<input id="password" type="password" name="password">
+<button id="login">Login</button>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/login.js"></script>

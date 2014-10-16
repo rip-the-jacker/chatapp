@@ -1,37 +1,7 @@
-{% load static %}
-{% for message in history %}
-  <div>
-    <span class="username">{{ message.user.username}}</span>:<span>{{message.message}}</span>
-  </div>
-{% endfor %}
 <div id="chat_area"></div>
 <textarea id="input_area"></textarea>
 <button id="chat_enter">Enter</button>
 <script src="/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="{% static 'omnibus/omnibus.min.js' %}"></script>
-<script type="text/javascript">
-  $('#chat_enter').click(function(event) {
-    var message = $('#input_area').val();
-    $('#input_area').val('');
-    $.ajax({
-      url: 'new_message',
-      type: 'POST',
-      dataType: 'json',
-      data: {message: message},
-      success: function(msg){
-        console.log(msg);
-      }
-    })
-  })
-</script>
-<script type="text/javascript">
-var transport = WebSocket;
-var endpoint = '{{ OMNIBUS_ENDPOINT }}';
-var connection = new Omnibus(transport, endpoint);
-var channel = connection.openChannel('chatapp')
-channel.on('new_msg', function(event) {
-  var message = event.data.payload.text;
-  var user = event.data.payload.username;
-  $('#chat_area').append('<div><span>'+user+'</span>:<span>'+message+'</span><div>');
-});
-</script>
+<script src="/static/omnibus/omnibus.min.js"></script>
+<script src="/static/js/channel.js"></script>
+<script src="/static/js/chat.js"></script>
