@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     $.ajax({
-        url: '/api/v1/message/?format=json&offset=0',
+        url: '/api/v1/message/?format=json&limit=0',
         type: 'GET',
         dataType: 'json',
         success: function(resp){
