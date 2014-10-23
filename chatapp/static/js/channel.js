@@ -1,5 +1,5 @@
 var transport = WebSocket;
-var endpoint = 'ws://localhost:4242/ec';
+var endpoint = 'ws://keymaster.in:4242/ec';
 var connection = new Omnibus(transport, endpoint);
 var channel = connection.openChannel('chatapp')
 channel.on('new_msg', function(event) {
